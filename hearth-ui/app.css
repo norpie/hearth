@@ -1,0 +1,239 @@
+/* DEFAULT */
+@import "tailwindcss";
+@source "./src/**/*.{rs,html,css}";
+
+/* FONTS */
+
+@import "./assets/fontawesome.css";
+
+/* COMPONENT STYLES */
+
+@import "./assets/scrollbar.css";
+@import "./assets/tooltip.css";
+@import "./assets/toast.css";
+
+/* Font Awesome 7 Font Face Declarations - Must be before layers */
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/assets/fa-regular-400.woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("/assets/fa-solid-900.woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/assets/fa-brands-400.woff2");
+}
+
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter Variable";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/InterVariable-Italic.woff2") format("woff2");
+}
+
+/* THEME */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Dark mode color overrides */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.606 0.25 292.717);
+  --primary-foreground: oklch(0.969 0.016 293.756);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.606 0.25 292.717);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.606 0.25 292.717);
+  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.606 0.25 292.717);
+}
+
+/* Theme color utilities - Force compilation */
+@layer components {
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+  
+  .bg-muted {
+    background-color: var(--muted);
+  }
+  
+  .even\\:bg-muted:nth-child(even) {
+    background-color: var(--muted);
+  }
+}
+
+@layer base {
+  .dark {
+    --background: oklch(0.141 0.005 285.823);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.21 0.006 285.885);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.21 0.006 285.885);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.541 0.281 293.009);
+    --primary-foreground: oklch(0.969 0.016 293.756);
+    --secondary: oklch(0.274 0.006 286.033);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.274 0.006 286.033);
+    --muted-foreground: oklch(0.705 0.015 286.067);
+    --accent: oklch(0.274 0.006 286.033);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.541 0.281 293.009);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.21 0.006 285.885);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.541 0.281 293.009);
+    --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
+    --sidebar-accent: oklch(0.274 0.006 286.033);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.541 0.281 293.009);
+  }
+}
+
+
+
+
+/* Typography defaults */
+@layer base {
+  h1 {
+    @apply scroll-m-20 text-balance text-4xl font-extrabold tracking-tight;
+    color: var(--foreground);
+  }
+
+  h2 {
+    @apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+    color: var(--foreground);
+  }
+
+  h3 {
+    @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+    color: var(--foreground);
+  }
+
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+    color: var(--foreground);
+  }
+
+  p:first-of-type {
+    @apply text-xl leading-7 [&:not(:first-child)]:mt-6;
+    color: var(--muted-foreground);
+  }
+
+  .text-muted-foreground {
+    @apply text-xl leading-7 [&:not(:first-child)]:mt-6;
+    color: var(--muted-foreground);
+  }
+
+  a {
+    @apply font-medium underline underline-offset-4;
+    color: var(--primary);
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+    color: var(--foreground);
+  }
+
+  ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+    color: var(--foreground);
+  }
+
+  ol {
+    @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+    color: var(--foreground);
+  }
+
+  div:has(> table) {
+    @apply my-6 w-full overflow-y-auto;
+  }
+
+  table {
+    @apply w-full;
+    color: var(--foreground);
+  }
+
+  thead tr {
+    @apply m-0 border-t p-0;
+    background-color: var(--muted);
+  }
+
+  tbody tr {
+    @apply m-0 border-t p-0;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--muted);
+  }
+
+  th {
+    @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+    color: var(--foreground);
+  }
+
+  td {
+    @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+    color: var(--foreground);
+  }
+}
+

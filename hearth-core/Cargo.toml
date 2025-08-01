@@ -1,0 +1,21 @@
+[package]
+name = "hearth-core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { workspace = true }
+uuid = { version = "1.0", features = ["v4", "js"] }
+toml = { workspace = true }
+dirs = { workspace = true }
+thiserror = { workspace = true }
+chrono = { version = "0.4", features = ["serde"] }
+serde_json = "1.0"
+log = "0.4"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+web-sys = { version = "0.3.77", features = ["Window", "Storage"] }
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21"
+ndk-context = "0.1"

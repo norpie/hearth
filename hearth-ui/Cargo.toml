@@ -1,0 +1,32 @@
+[package]
+name = "hearth-ui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hearth-core = { workspace = true }
+dioxus = { workspace = true }
+dioxus-document = "0.7.0-rc.0"
+urlencoding = "2.1"
+log = "0.4"
+uuid = { version = "1.0", features = ["v4"] }
+
+# Cross-platform timer support
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tokio = { version = "1.0", features = ["time", "rt-multi-thread"] }
+
+# Web-specific dependencies
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+web-sys = { version = "0.3.77", features = ["console", "Element", "HtmlElement", "Window", "Document", "DomRect"] }
+gloo-timers = { version = "0.3", features = ["futures"] }
+wasm-bindgen-futures = "0.4"
+
+# Desktop-specific dependencies
+[target.'cfg(all(not(target_arch = "wasm32"), not(feature = "mobile")))'.dependencies]
+dioxus-desktop = "0.7.0-rc.0"
+
+
+[features]
+default = []
+mobile = []
+

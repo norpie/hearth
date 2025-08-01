@@ -1,0 +1,13 @@
+[package]
+name = "hearth-mobile"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dioxus = { workspace = true, features = ["router"] }
+hearth-ui = { workspace = true, features = ["mobile"] }
+
+[features]
+default = ["mobile"]
+mobile = ["dioxus/mobile", "hearth-ui/mobile"]
+

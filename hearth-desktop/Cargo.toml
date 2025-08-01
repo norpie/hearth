@@ -1,0 +1,12 @@
+[package]
+name = "hearth-desktop"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dioxus = { workspace = true, features = ["router", "desktop"] }
+hearth-ui = { workspace = true }
+
+[features]
+default = []
+

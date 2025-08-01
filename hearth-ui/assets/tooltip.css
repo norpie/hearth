@@ -1,0 +1,66 @@
+/* Tooltip arrow styles - double pseudo-element technique for bordered arrows */
+/* Top arrow */
+.tooltip-arrow-top::before {
+  content: " ";
+  position: absolute;
+  left: var(--arrow-position, 50%);
+  top: -10px;
+  transform: translateX(-50%);
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid theme("colors.gray.200");
+  border-top: none;
+}
+
+.dark .tooltip-arrow-top::before {
+  border-bottom-color: theme("colors.gray.600");
+}
+
+.tooltip-arrow-top::after {
+  content: " ";
+  position: absolute;
+  left: var(--arrow-position, 50%);
+  top: -9px;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  border-top: none;
+}
+
+.dark .tooltip-arrow-top::after {
+  border-bottom-color: theme("colors.gray.800");
+}
+
+/* Bottom arrow */
+.tooltip-arrow-bottom::before {
+  content: " ";
+  position: absolute;
+  left: var(--arrow-position, 50%);
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 11px solid theme("colors.gray.200");
+  border-bottom: none;
+}
+
+.dark .tooltip-arrow-bottom::before {
+  border-top-color: theme("colors.gray.600");
+}
+
+.tooltip-arrow-bottom::after {
+  content: " ";
+  position: absolute;
+  left: var(--arrow-position, 50%);
+  bottom: -9px;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  border-bottom: none;
+}
+
+.dark .tooltip-arrow-bottom::after {
+  border-top-color: theme("colors.gray.800");
+}
