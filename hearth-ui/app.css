@@ -1,0 +1,19 @@
+/* DEFAULT */
+@import "tailwindcss";
+@source "./src/**/*.{rs,html,css}";
+
+/* FONTS */
+@import "./assets/fonts.css";
+
+/* THEME */
+@import "./assets/theme.css";
+
+/* TYPOGRAPHY */
+@import "./assets/typography.css";
+
+/* COMPONENT STYLES */
+@import "./assets/components/scrollbar.css";
+@import "./assets/components/tooltip.css";
+@import "./assets/components/toast.css";
+
+

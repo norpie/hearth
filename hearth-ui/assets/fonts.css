@@ -1,0 +1,44 @@
+/* FONTS */
+
+@import "./fontawesome.css";
+
+/* Font Awesome 7 Font Face Declarations - Must be before layers */
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/assets/fa-regular-400.woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("/assets/fa-solid-900.woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/assets/fa-brands-400.woff2");
+}
+
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter Variable";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/InterVariable-Italic.woff2") format("woff2");
+}

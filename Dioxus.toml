@@ -1,0 +1,77 @@
+[application]
+name = "Hearth"
+default_platform = "web"
+
+[web.app]
+title = "Hearth"
+
+[desktop.app]
+title = "Hearth"
+
+[mobile.app]
+title = "Hearth"
+theme_color = "#000000"
+background_color = "#000000"
+
+[bundle]
+identifier = "dev.norpie.hearth"
+publisher = "norpie"
+icon = [
+  "hearth-ui/assets/icons/logo-48.png",
+  "hearth-ui/assets/icons/logo-72.png", 
+  "hearth-ui/assets/icons/logo-96.png",
+  "hearth-ui/assets/icons/logo-144.png",
+  "hearth-ui/assets/icons/logo-192.png"
+]
+resources = ["hearth-ui/assets"]
+copyright = "Copyright (c) norpie 2025. All rights reserved."
+category = "Entertainment"
+short_description = "Cross-platform LLM roleplay application"
+long_description = "Hearth is a modern, cross-platform application for LLM-powered roleplay and character interaction, featuring seamless synchronization across devices."
+
+[mobile]
+pre_compiled_android = true
+
+[mobile.wry]
+android_sleep_on_pause = true
+
+[mobile.manifest.android]
+min_sdk_version = 24
+target_sdk_version = 34
+compile_sdk_version = 34
+
+[mobile.manifest.android.application]
+theme = "@android:style/Theme.DeviceDefault.NoActionBar"
+allow_backup = false
+extract_native_libs = true
+has_code = true
+supports_rtl = true
+use_cleartexttraffic = false
+
+[mobile.manifest.android.activity]
+exported = true
+launch_mode = "singleTop"
+orientation = "unspecified"
+window_soft_input_mode = "adjustPan"
+config_changes = [
+  "orientation",
+  "keyboardHidden",
+  "keyboard",
+  "screenSize",
+  "smallestScreenSize",
+  "locale",
+  "layoutDirection",
+  "fontScale",
+  "screenLayout",
+  "density",
+  "uiMode"
+]
+
+[mobile.manifest.android.intent_filters]
+autoVerify = true
+
+[[mobile.manifest.android.intent_filters.actions]]
+name = "android.intent.action.MAIN"
+
+[[mobile.manifest.android.intent_filters.categories]]
+name = "android.intent.category.LAUNCHER"

@@ -1,0 +1,31 @@
+[application]
+name = "hearth"
+default_platform = "web"
+
+# Tailwind CSS configuration
+tailwind_input = "input.css"
+tailwind_output = "assets/tailwind.css"
+
+[web.app]
+title = "Hearth"
+
+[web.resource.dev]
+
+[desktop.app]
+title = "Hearth"
+
+[mobile.app]
+title = "Hearth"
+
+[bundle]
+icon = [
+    "hearth-ui/assets/icons/logo-32.png",
+    "hearth-ui/assets/icons/logo-48.png",
+    "hearth-ui/assets/icons/logo-64.png",
+    "hearth-ui/assets/icons/logo-72.png",
+    "hearth-ui/assets/icons/logo-96.png",
+    "hearth-ui/assets/icons/logo-128.png",
+    "hearth-ui/assets/icons/logo-144.png",
+    "hearth-ui/assets/icons/logo-192.png",
+    "hearth-ui/assets/icons/logo-256.png"
+]

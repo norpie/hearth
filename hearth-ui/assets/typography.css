@@ -1,0 +1,331 @@
+/* Typography utility classes and base styles */
+
+@layer components {
+  /* Lead paragraph - for introductory/first paragraphs */
+  .prose-lead {
+    @apply text-xl leading-7 [&:not(:first-child)]:mt-6;
+    color: var(--color-muted-foreground);
+  }
+  
+  /* Typography utility classes */
+  .prose-h1 {
+    @apply scroll-m-20 text-balance text-4xl font-extrabold tracking-tight;
+    color: var(--color-foreground);
+  }
+
+  .prose-h2 {
+    @apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  .prose-h3 {
+    @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+    color: var(--color-foreground);
+  }
+
+  .prose-h4 {
+    @apply mt-6 scroll-m-20 text-xl font-semibold tracking-tight;
+    color: var(--color-foreground);
+  }
+
+  .prose-h5 {
+    @apply mt-4 scroll-m-20 text-lg font-medium tracking-tight;
+    color: var(--color-foreground);
+  }
+
+  .prose-h6 {
+    @apply mt-4 scroll-m-20 text-base font-medium tracking-tight;
+    color: var(--color-foreground);
+  }
+
+  .prose-p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+    color: var(--color-foreground);
+  }
+
+  .prose-link {
+    @apply font-medium underline underline-offset-4;
+    color: var(--color-primary);
+  }
+
+  .prose-blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  .prose-ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+    color: var(--color-foreground);
+  }
+
+  .prose-ol {
+    @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+    color: var(--color-foreground);
+  }
+
+  .prose-table {
+    @apply w-full;
+    color: var(--color-foreground);
+  }
+
+  .prose-table-wrapper {
+    @apply my-6 w-full overflow-y-auto;
+  }
+
+  .prose-thead-tr {
+    @apply m-0 border-t p-0;
+  }
+
+  .prose-tbody-tr {
+    @apply m-0 border-t p-0;
+  }
+
+  .prose-tbody-tr-even {
+    background-color: var(--color-muted);
+  }
+
+  .prose-th {
+    @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  .prose-td {
+    @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+  
+  /* Markdown prose styling - comprehensive styling for markdown content */
+  .prose {
+    @apply text-foreground max-w-none;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply font-semibold tracking-tight;
+    color: var(--color-foreground);
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose h1:first-child,
+  .prose h2:first-child,
+  .prose h3:first-child,
+  .prose h4:first-child,
+  .prose h5:first-child,
+  .prose h6:first-child {
+    margin-top: 0;
+  }
+
+  .prose h1 { @apply text-2xl; }
+  .prose h2 { @apply text-xl; }
+  .prose h3 { @apply text-lg; }
+  .prose h4 { @apply text-base; }
+  .prose h5 { @apply text-sm; }
+  .prose h6 { @apply text-sm; }
+
+  .prose p {
+    @apply leading-relaxed;
+    color: var(--color-foreground);
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose p:first-child {
+    margin-top: 0;
+  }
+
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+
+  .prose a {
+    @apply font-medium underline underline-offset-2 decoration-primary;
+    color: var(--color-primary);
+  }
+
+  .prose a:hover {
+    @apply decoration-2;
+  }
+
+  .prose strong {
+    @apply font-semibold;
+    color: var(--color-foreground);
+  }
+
+  .prose em {
+    @apply italic;
+    color: var(--color-foreground);
+  }
+
+  .prose blockquote {
+    @apply border-l-4 pl-4 italic;
+    border-color: var(--color-border);
+    color: var(--color-muted-foreground);
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .prose ul {
+    @apply list-disc pl-6;
+    color: var(--color-foreground);
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-6;
+    color: var(--color-foreground);
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+
+  .prose code {
+    @apply bg-muted px-1 py-0.5 rounded text-sm;
+    color: var(--color-foreground);
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .prose pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+    color: var(--color-foreground);
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose table {
+    @apply w-full border-collapse;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .prose th,
+  .prose td {
+    @apply border px-3 py-2 text-left;
+    border-color: var(--color-border);
+    color: var(--color-foreground);
+  }
+
+  .prose th {
+    @apply font-semibold bg-muted;
+  }
+
+  .prose img {
+    @apply rounded-lg max-w-full h-auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .prose hr {
+    @apply border-0 border-t;
+    border-color: var(--color-border);
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  /* Size variants */
+  .prose-sm {
+    @apply text-sm;
+  }
+
+  .prose-sm h1 { @apply text-xl; }
+  .prose-sm h2 { @apply text-lg; }
+  .prose-sm h3 { @apply text-base; }
+  .prose-sm h4 { @apply text-sm; }
+  .prose-sm h5 { @apply text-xs; }
+  .prose-sm h6 { @apply text-xs; }
+
+  /* Prose invert - for dark content on light backgrounds */
+  .prose-invert h1,
+  .prose-invert h2,
+  .prose-invert h3,
+  .prose-invert h4,
+  .prose-invert h5,
+  .prose-invert h6,
+  .prose-invert p,
+  .prose-invert strong,
+  .prose-invert em,
+  .prose-invert ul,
+  .prose-invert ol,
+  .prose-invert li,
+  .prose-invert code,
+  .prose-invert pre,
+  .prose-invert th,
+  .prose-invert td {
+    color: inherit;
+  }
+
+  .prose-invert blockquote {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Special utilities */
+  .even\\:bg-muted:nth-child(even) {
+    background-color: var(--color-muted);
+  }
+}
+
+/* Default colors and basic styling for text elements */
+@layer base {
+  .text-muted-foreground {
+    color: var(--color-muted-foreground);
+  }
+
+  /* Default colors for text elements */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-foreground);
+  }
+
+  p {
+    color: var(--color-foreground);
+  }
+
+  a {
+    @apply font-medium underline underline-offset-4;
+    color: var(--color-primary);
+  }
+
+  blockquote {
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  ul, ol {
+    color: var(--color-foreground);
+  }
+
+  table {
+    color: var(--color-foreground);
+  }
+
+  th {
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  td {
+    color: var(--color-foreground);
+    border-color: var(--color-border);
+  }
+
+  /* Table striping */
+  tbody tr:nth-child(even) {
+    background-color: var(--color-muted);
+  }
+}

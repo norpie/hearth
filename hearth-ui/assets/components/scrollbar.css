@@ -1,0 +1,46 @@
+/* ScrollArea scrollbar styling */
+.scrollbar-hide {
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-show {
+  /* Webkit */
+  scrollbar-width: thin;
+}
+
+.scrollbar-show::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-show::-webkit-scrollbar-track {
+  background: theme("colors.gray.300");
+}
+
+.scrollbar-show::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+
+.scrollbar-show::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.gray.500");
+}
+
+/* Dark mode scrollbar */
+.dark .scrollbar-show::-webkit-scrollbar-track {
+  background: theme("colors.gray.800");
+}
+
+.dark .scrollbar-show::-webkit-scrollbar-thumb {
+  background: theme("colors.gray.600");
+}
+
+.dark .scrollbar-show::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.gray.500");
+}
